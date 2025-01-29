@@ -12,7 +12,7 @@ exports.register = (req, res) => {
         const { body } = req; 
         const schema = Joi.object({ 
             name: Joi.string().min(6).required(),
-            email: Joi.string().min(6).required().email(),
+            email: Joi.string().email().alphanum().min(3).max(30).required(),
             password: Joi.string().min(6).required(),
             confirmPass: Joi.string().min(6).required() 
         });
